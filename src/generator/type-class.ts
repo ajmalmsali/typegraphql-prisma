@@ -64,7 +64,7 @@ export function generateOutputTypeClassFromType(
     isExported: true,
     decorators: [
       {
-        name: "TypeGraphQL.ObjectType",
+        name: "ObjectType",
         arguments: [
           Writers.object({
             isAbstract: "true",
@@ -84,7 +84,7 @@ export function generateOutputTypeClassFromType(
         trailingTrivia: "\r\n",
         decorators: [
           {
-            name: "TypeGraphQL.Field",
+            name: "Field",
             arguments: [
               `_type => ${field.typeGraphQLType}`,
               Writers.object({
@@ -142,7 +142,7 @@ export function generateInputTypeClassFromType(
     isExported: true,
     decorators: [
       {
-        name: "TypeGraphQL.InputType",
+        name: "InputType",
         arguments: [
           Writers.object({
             isAbstract: "true",
@@ -162,7 +162,7 @@ export function generateInputTypeClassFromType(
             ? []
             : [
                 {
-                  name: "TypeGraphQL.Field",
+                  name: "Field",
                   arguments: [
                     `_type => ${field.typeGraphQLType}`,
                     Writers.object({
@@ -186,7 +186,7 @@ export function generateInputTypeClassFromType(
         statements: [`return this.${field.name};`],
         decorators: [
           {
-            name: "TypeGraphQL.Field",
+            name: "Field",
             arguments: [
               `_type => ${field.typeGraphQLType}`,
               Writers.object({

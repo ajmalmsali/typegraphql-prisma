@@ -14,7 +14,7 @@ export function generateCrudResolverClassMethodDeclaration(
     returnType: `Promise<${action.returnTSType}>`,
     decorators: [
       {
-        name: `TypeGraphQL.${action.operation}`,
+        name: `${action.operation}`,
         arguments: [
           `_returns => ${action.typeGraphQLType}`,
           Writers.object({
@@ -28,12 +28,12 @@ export function generateCrudResolverClassMethodDeclaration(
         name: "ctx",
         // TODO: import custom `ContextType`
         type: "any",
-        decorators: [{ name: "TypeGraphQL.Ctx", arguments: [] }],
+        decorators: [{ name: "Ctx", arguments: [] }],
       },
       {
         name: "info",
         type: "GraphQLResolveInfo",
-        decorators: [{ name: "TypeGraphQL.Info", arguments: [] }],
+        decorators: [{ name: "Info", arguments: [] }],
       },
       ...(!action.argsTypeName
         ? []
@@ -41,7 +41,7 @@ export function generateCrudResolverClassMethodDeclaration(
             {
               name: "args",
               type: action.argsTypeName,
-              decorators: [{ name: "TypeGraphQL.Args", arguments: [] }],
+              decorators: [{ name: "Args", arguments: [] }],
             },
           ]),
     ],

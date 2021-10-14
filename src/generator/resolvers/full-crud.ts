@@ -60,7 +60,7 @@ export default function generateCrudResolverClassFromMapping(
     isExported: true,
     decorators: [
       {
-        name: "TypeGraphQL.Resolver",
+        name: "Resolver",
         arguments: [`_of => ${model.typeName}`],
       },
     ],

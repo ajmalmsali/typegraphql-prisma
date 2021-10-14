@@ -65,7 +65,7 @@ export default function generateObjectTypeClassFromModel(
     isExported: true,
     decorators: [
       {
-        name: "TypeGraphQL.ObjectType",
+        name: "ObjectType",
         arguments: [
           Writers.object({
             isAbstract: "true",
@@ -97,7 +97,7 @@ export default function generateObjectTypeClassFromModel(
               ? []
               : [
                   {
-                    name: "TypeGraphQL.Field",
+                    name: "Field",
                     arguments: [
                       `_type => ${field.typeGraphQLType}`,
                       Writers.object({
@@ -123,7 +123,7 @@ export default function generateObjectTypeClassFromModel(
               trailingTrivia: "\r\n",
               decorators: [
                 {
-                  name: "TypeGraphQL.Field",
+                  name: "Field",
                   arguments: [
                     `_type => ${countField.typeGraphQLType}`,
                     Writers.object({
@@ -150,7 +150,7 @@ export default function generateObjectTypeClassFromModel(
           trailingTrivia: "\r\n",
           decorators: [
             {
-              name: "TypeGraphQL.Field",
+              name: "Field",
               arguments: [
                 `_type => ${field.typeGraphQLType}`,
                 Writers.object({

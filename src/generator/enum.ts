@@ -35,7 +35,7 @@ export default function generateEnumFromDef(
 
   // TODO: refactor to AST
   sourceFile.addStatements([
-    `TypeGraphQL.registerEnumType(${enumDef.typeName}, {
+    `registerEnumType(${enumDef.typeName}, {
       name: "${enumDef.typeName}",
       description: ${enumDef.docs ? `"${enumDef.docs}"` : "undefined"},
     });`,

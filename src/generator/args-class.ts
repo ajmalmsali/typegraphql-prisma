@@ -54,7 +54,7 @@ export default function generateArgsTypeClassFromArgs(
     isExported: true,
     decorators: [
       {
-        name: "TypeGraphQL.ArgsType",
+        name: "ArgsType",
         arguments: [],
       },
     ],
@@ -67,7 +67,7 @@ export default function generateArgsTypeClassFromArgs(
         trailingTrivia: "\r\n",
         decorators: [
           {
-            name: "TypeGraphQL.Field",
+            name: "Field",
             arguments: [
               `_type => ${arg.typeGraphQLType}`,
               Writers.object({
